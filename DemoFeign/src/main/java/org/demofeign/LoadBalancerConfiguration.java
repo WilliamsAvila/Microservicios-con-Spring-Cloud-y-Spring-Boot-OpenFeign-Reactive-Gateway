@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 @Slf4j
 public class LoadBalancerConfiguration {
 
+    // Load Balancer
     @Bean
     public ServiceInstanceListSupplier serviceInstanceListSupplier(ConfigurableApplicationContext context) {
 //        log.info("Load balancer service instance list");
