@@ -31,6 +31,15 @@
         <spring-cloud.version>2024.0.0</spring-cloud.version>
     </properties>
     <dependencies>
+<!---
+Según la versión de Java hay que implementar las dependencias con las
+versiones actualizadas, si inyectas manualmente la dependencia asegúrate
+que esté habilitada para la version de Java y Spring Boot que vayas a utilizar
+
+Dependencias:
+-Eureka Server
+-Spring Cloud
+-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -38,10 +47,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-
-            <!--- la sigueinte exclusion es por que eureka se esta trayendo los
-            commons-loggs -->
-
             <exclusions>
                 <exclusion>
                     <groupId>commons-logging</groupId>
@@ -49,6 +54,10 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+<!--- la siguiente exclusion es porque eureka se está trayendo los
+commons-loggs donde Spring-boot-starter-actuator ya los trae por defecto
+lo cual tiene conflictos de código al levantar la aplicación -->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
