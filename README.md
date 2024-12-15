@@ -1,5 +1,5 @@
-## Guia de Microservicios con Spring Cloud, Spring Boot, Feign y Reactive Gateway
-![Micro Servicios](https://github.com/user-attachments/assets/47e662f1-5827-4d7a-8aa4-a2cce9a8b78d)
+## Guia de Microservicios con Spring Cloud, Spring Boot, OpenFeign y Reactive Gateway
+<img width="959" alt="Micro Servicios" src="https://github.com/user-attachments/assets/653de87b-7cc1-43a7-915c-a8d9d74b9182" />
 
 
 
