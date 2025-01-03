@@ -38,7 +38,8 @@ que esté habilitada para la version de Java y Spring Boot que vayas a utilizar
 
 Dependencias:
 -Eureka Server
--Spring Cloud
+-Devtools
+"que solo se necesita Eureka Server y DevTools"
 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -47,6 +48,12 @@ Dependencias:
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+
+<!--- la siguiente exclusion es porque eureka se está trayendo los
+commons-loggs donde Spring-boot-starter-actuator ya los trae por defecto
+lo cual tiene conflictos de código al levantar la aplicación -->
+
+
             <exclusions>
                 <exclusion>
                     <groupId>commons-logging</groupId>
@@ -55,9 +62,7 @@ Dependencias:
             </exclusions>
         </dependency>
 
-<!--- la siguiente exclusion es porque eureka se está trayendo los
-commons-loggs donde Spring-boot-starter-actuator ya los trae por defecto
-lo cual tiene conflictos de código al levantar la aplicación -->
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
