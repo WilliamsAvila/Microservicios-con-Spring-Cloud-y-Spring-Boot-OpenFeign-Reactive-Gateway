@@ -3,6 +3,8 @@ package org.demo1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class Demo1Service {
 
@@ -14,5 +16,9 @@ public class Demo1Service {
         newDemo1.setName(demo1Model.getName());
         demo1Repository.save(demo1Model);
         return newDemo1;
+    }
+
+    public Demo1Model getDemo1(String name) {
+        return demo1Repository.findByName(name);
     }
 }
