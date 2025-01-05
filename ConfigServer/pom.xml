@@ -39,8 +39,6 @@ que esté habilitada para la version de Java y Spring Boot que vayas a utilizar
 Dependencias:
 -Config Server
 -Eureka Discovery Client
--Spring web
--Config Client
 -->
 	<dependencies>
 		<dependency>
