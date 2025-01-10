@@ -12,10 +12,8 @@ public class Demo1Service {
     private Demo1Repository demo1Repository;
 
     public Demo1Model addDemo1(Demo1Model demo1Model) {
-        Demo1Model newDemo1 = new Demo1Model();
-        newDemo1.setName(demo1Model.getName());
-        demo1Repository.save(demo1Model);
-        return newDemo1;
+        return demo1Repository.save(demo1Model);
+
     }
 
     public Demo1Model getDemo1(String name) {
