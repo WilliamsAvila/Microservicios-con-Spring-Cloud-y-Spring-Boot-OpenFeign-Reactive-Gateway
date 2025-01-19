@@ -1,8 +1,7 @@
 package org.demofeign.Controller;
 
 import org.demofeign.Model.DemoFeignModel;
-import org.demofeign.Repository.DemoFeignRepository;
-import org.demofeign.Services.DemoFeignServices;
+import org.demofeign.Service.DemoFeignServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

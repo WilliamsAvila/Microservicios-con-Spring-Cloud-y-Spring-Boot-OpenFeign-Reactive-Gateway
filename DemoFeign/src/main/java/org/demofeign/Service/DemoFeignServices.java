@@ -1,6 +1,5 @@
-package org.demofeign.Services;
+package org.demofeign.Service;
 
-import com.netflix.discovery.EurekaClient;
 import org.demofeign.Helper.ReportHelper;
 import org.demofeign.Model.DemoFeignModel;
 import org.demofeign.Repository.DemoFeignRepository;
