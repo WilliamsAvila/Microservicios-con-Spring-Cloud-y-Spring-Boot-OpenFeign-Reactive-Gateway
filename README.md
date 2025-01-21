@@ -39,6 +39,7 @@ Configuración de Eureka Server:
 
 En tu clase principal de la aplicación (por ejemplo, EurekaServerApplication), agrega la anotación @EnableEurekaServer:
 
+
 @SpringBootApplication
 @EnableEurekaServer
 public class EurekaServerApplication {
@@ -46,6 +47,8 @@ public class EurekaServerApplication {
         SpringApplication.run(EurekaServerApplication.class, args);
     }
 }
+
+
 
 Configura el archivo application.properties:
 
