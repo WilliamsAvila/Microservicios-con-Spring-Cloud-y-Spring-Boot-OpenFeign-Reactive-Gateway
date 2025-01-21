@@ -77,14 +77,14 @@ Paso 2: Crear el Config Server
 
 El Config Server centraliza la configuración de tus microservicios.
 
-    Dependencias en el archivo pom.xml:
+##### Dependencias en el archivo pom.xml:
 
-    Agrega las dependencias para el Config Server:
+##### Agrega las dependencias para el Config Server:
 
-<dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-starter-config</artifactId>
-</dependency>
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-config</artifactId>
+    </dependency>
 
 Configuración del Config Server:
 
