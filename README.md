@@ -5,63 +5,73 @@ Este proyecto se basa en una guia facil y rapida para implementar y dirtribuir m
 
 Tecnologias implementadas:
 
-#### 1.Spring Boot:
+### 1. Spring Boot:
 
 Spring Boot es un marco de trabajo basado en Spring que simplifica la creación de aplicaciones Java. Te permite crear aplicaciones independientes, listas para producción, con configuración mínima. En una arquitectura de microservicios, Spring Boot se usa para crear cada servicio.
 
-#### 2. Eureka Server:
+### 2. Eureka Server:
 
 Eureka es una herramienta de descubrimiento de servicios, parte de la suite de Spring Cloud. En una arquitectura de microservicios, cada servicio debe registrarse para que otros servicios puedan descubrirlo y comunicarse con él. Eureka Server actúa como un "registro" centralizado donde los servicios se registran.
 
-#### 3. Config Server:
+### 3. Config Server:
 
 Spring Cloud Config Server centraliza la configuración de todas las aplicaciones. En lugar de tener archivos de configuración dispersos por todos los microservicios, puedes usar un Config Server para que todos los microservicios obtengan su configuración desde un único lugar.
 
-####  4. OpenFeign:
+###  4. OpenFeign:
 
 OpenFeign es una librería declarativa que facilita las peticiones HTTP entre microservicios. Con OpenFeign, puedes crear interfaces Java que representan las APIs de otros servicios y realizar solicitudes HTTP automáticamente, sin necesidad de escribir código detallado para cada llamada.
 
-Pasos para Implementar la Arquitectura:
-Paso 1: Crear el Eureka Server
+#### Pasos para Implementar la Arquitectura:
+#### Paso 1: Crear el Eureka Server
 
 Primero, necesitas configurar un Eureka Server para que los microservicios puedan registrarse.
 
-    Dependencias en el archivo pom.xml:
+Dependencias en el archivo pom.xml:
 
-    Agrega la dependencia de Eureka Server a tu archivo pom.xml:
+Agrega la dependencia de Eureka Server a tu archivo pom.xml:
 
-<dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-</dependency>
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+    </dependency>
 
-Configuración de Eureka Server:
+##### Configuración de Eureka Server:
 
 En tu clase principal de la aplicación (por ejemplo, EurekaServerApplication), agrega la anotación @EnableEurekaServer:
 
 
-@SpringBootApplication
-@EnableEurekaServer
-public class EurekaServerApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(EurekaServerApplication.class, args);
+    @SpringBootApplication
+    @EnableEurekaServer
+    public class EurekaServerApplication {
+        public static void main(String[] args) {
+            SpringApplication.run(EurekaServerApplication.class, args);
+        }
     }
-}
 
 
-
-Configura el archivo application.properties:
+##### Configura el archivo application.properties:
 
 En el archivo application.properties de Eureka Server, configura el puerto y la URL de la instancia:
 
+    aplication.properties
+    
+    #Nombre de la aplicación o proyecto
+    spring.application.name=Eureka-Server
+
+    #Puerto por defecto de Eureka Server
     server.port=8761
-    spring.application.name=eureka-server
-    eureka.client.registerWithEureka=false
-    eureka.client.fetchRegistry=false
 
-    Inicia el Eureka Server:
 
-    Ejecuta el servicio Eureka y accede al panel de administración en http://localhost:8761.
+    #Configuracion adicional:
+    #La siguiente configuración hace que cualquier micro-servicio no dependa del registro en eureka server.
+    eureka.client.register-with-eureka=false
+
+    #Esta configuración hace que no se obtenga por default todos los micro-servicios registrados en Eureka.
+    eureka.client.fetch-registry=false
+
+##### Inicia el Eureka Server:
+
+Ejecuta el servicio Eureka y accede al panel de administración en http://localhost:8761.
 
 Paso 2: Crear el Config Server
 
